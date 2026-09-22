@@ -24,14 +24,12 @@ class TailscaleManager:
     def __init__(self, addon):
         self.addon = addon
         self.addon_path = addon.getAddonInfo('path')
-        
-        # Determine base path based on OS
-        if self.is_windows():
-            self.base_path = os.path.join(os.getenv('APPDATA', ''), 'Kodi', 'addons', addon.getAddonInfo('id'))
-        else:
-            # LibreELEC uses /storage
-            self.base_path = os.path.join('/storage', '.kodi', 'addons', addon.getAddonInfo('id'))
-        
+
+        # Use Kodi's per-addon profile directory. translatePath() resolves
+        # this correctly on every platform (Linux, Windows, macOS, Android,
+        # LibreELEC/CoreELEC), instead of assuming a specific OS layout.
+        self.base_path = xbmcvfs.translatePath(addon.getAddonInfo('profile'))
+
         self.bin_path = os.path.join(self.base_path, 'bin')
         self.state_path = os.path.join(self.base_path, 'state')
         self.log_path = os.path.join(self.base_path, 'logs')

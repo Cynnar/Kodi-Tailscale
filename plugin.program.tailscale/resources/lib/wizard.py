@@ -213,14 +213,10 @@ class SetupWizard:
         if not self.download_step():
             return False
         
-        # Step 2: Start (skip on Windows)
-        if not is_windows:
-            if not self.start_step():
-                return False
-        else:
-            # Windows requires manual installation
-            if self.progress:
-                self.progress.close()
+        # Step 2: Start. start_step() itself detects Windows and shows the
+        # manual-installation dialog in that case, returning False — no
+        # need to duplicate that check here.
+        if not self.start_step():
             return False
         
         # Step 3: Autostart
