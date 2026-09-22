@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.program.tailscale" name="Tailscale VPN Manager" version="1.0.0" provider-name="Cynnar">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.requests" version="2.31.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">Tailscale VPN Manager for Kodi</summary>
+        <summary lang="en_US">Tailscale VPN Manager for Kodi</summary>
+        <description lang="en_GB">Manage Tailscale VPN connections and easily connect to your NAS. Install, configure, and control Tailscale directly from Kodi. Add NAS sources with wizard guidance.</description>
+        <description lang="en_US">Manage Tailscale VPN connections and easily connect to your NAS. Install, configure, and control Tailscale directly from Kodi. Add NAS sources with wizard guidance.</description>
+        <platform>all</platform>
+        <license>MIT</license>
+        <forum></forum>
+        <website>https://github.com/yourusername/Kodi-Tailscale</website>
+        <source>https://github.com/yourusername/Kodi-Tailscale</source>
+        <news>v1.0.0 - Initial Release
+- Install Tailscale binary
+- Start/Stop Tailscale service
+- Authentication wizard
+- NAS source management
+- Connection status display
+        </news>
+        <assets>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.jpg</fanart>
+            <screenshot>resources/screenshot-01.jpg</screenshot>
+            <screenshot>resources/screenshot-02.jpg</screenshot>
+        </assets>
+    </extension>
+</addon>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <category label="30001">
+        <setting label="30010" type="lsep"/>
+        <setting id="tailscale_path" type="text" label="30011" default="/storage/.kodi/addons/plugin.program.tailscale/bin" enable="false"/>
+        <setting id="tailscale_installed" type="bool" label="30012" default="false" enable="false"/>
+        <setting id="tailscale_authenticated" type="bool" label="30013" default="false" enable="false"/>
+        
+        <setting label="30020" type="lsep"/>
+        <setting id="autostart_tailscale" type="bool" label="30021" default="true"/>
+        <setting id="exit_node" type="text" label="30022" default=""/>
+        
+        <setting label="30030" type="lsep"/>
+        <setting type="action" label="30031" action="RunPlugin(plugin://plugin.program.tailscale/?action=start)"/>
+        <setting type="action" label="30032" action="RunPlugin(plugin://plugin.program.tailscale/?action=stop)"/>
+        <setting type="action" label="30033" action="RunPlugin(plugin://plugin.program.tailscale/?action=status)"/>
+        <setting type="action" label="30034" action="RunPlugin(plugin://plugin.program.tailscale/?action=restart)"/>
+    </category>
+    
+    <category label="30002">
+        <setting label="30040" type="lsep"/>
+        <setting type="action" label="30041" action="RunPlugin(plugin://plugin.program.tailscale/?action=add_nas_source)"/>
+        <setting type="action" label="30042" action="RunPlugin(plugin://plugin.program.tailscale/?action=manage_sources)"/>
+        
+        <setting label="30050" type="lsep"/>
+        <setting id="default_nas_protocol" type="select" label="30051" default="smb" values="smb|nfs|webdav"/>
+        <setting id="default_nas_user" type="text" label="30052" default=""/>
+        <setting id="default_nas_pass" type="text" label="30053" default="" option="hidden"/>
+    </category>
+    
+    <category label="30003">
+        <setting label="30060" type="lsep"/>
+        <setting type="action" label="30061" action="RunPlugin(plugin://plugin.program.tailscale/?action=run_wizard)"/>
+        <setting type="action" label="30062" action="RunPlugin(plugin://plugin.program.tailscale/?action=reinstall)"/>
+        <setting type="action" label="30063" action="RunPlugin(plugin://plugin.program.tailscale/?action=uninstall)"/>
+    </category>
+</settings>
